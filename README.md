@@ -1,7 +1,28 @@
 # SpringBoot-JOOQ-SOLID
 
-A clean and scalable Java RESTful API built with **Spring Boot**, **JOOQ**, and **SOLID principles**.  
-Designed for high performance, modularity, and maintainability using best practices of modern Java backend development.
+A Java RESTful API project built with **Spring Boot**, **JOOQ**, and **SOLID principles**. This application demonstrates clean architectural patterns, modular design, and uses Liquibase for database migrations.
+
+---
+
+## 📁 Project Structure (Partial)
+```
+src/
+├── main/
+│   ├── java/com/jooqspring/springjooq/
+│   │   ├── controllers/         # REST controllers (User, Root)
+│   │   ├── dto/                 # Request, response, repository DTOs
+│   │   ├── entity/              # JPA or domain entities (User, Book, etc.)
+│   │   ├── exceptions/          # Custom exceptions & handlers
+│   │   ├── interceptor/         # Request interceptors (if any)
+│   │   ├── interfaces/          # Service interface contracts
+│   │   ├── repositories/        # JOOQ-based data access layer
+│   │   └── services/            # Business logic
+│   └── resources/
+│       ├── application.properties
+│       └── db/changelog/migration/  # Liquibase migration XMLs
+└── test/
+    └── SpringjooqApplicationTests.java
+```
 
 ---
 
@@ -37,69 +58,42 @@ Designed for high performance, modularity, and maintainability using best practi
 ### Prerequisites
 
 - Java 17+
-- Maven
+- Maven 3.8+
 - MySQL / PostgreSQL
 
-### Clone the Project
+### Build & Run
 
 ```bash
-git clone https://github.com/yourusername/springboot-jooq-solid.git
-cd springboot-jooq-solid
-```
+# Generate JOOQ code (important!)
+mvn generate-sources
 
-### Configuration
+# Build project
+./mvnw clean install
 
-Edit your `src/main/resources/application.properties`:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/dbname
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-spring.liquibase.change-log=classpath:db/changelog/db.changelog-master.xml
-```
-
----
-
-## 🧪 Run the App
-
-```bash
+# Run Spring Boot application
 ./mvnw spring-boot:run
 ```
 
 ---
 
-## 🗃 Example Endpoints
+## 🔗 API Endpoints
 
 | Method | Endpoint         | Description        |
 |--------|------------------|--------------------|
-| GET    | `/api/users`     | List all users     |
-| POST   | `/api/users`     | Create new user    |
-| GET    | `/api/books`     | List all books     |
+| GET    | /api/users       | List users         |
+| POST   | /api/users       | Create user        |
+| GET    | /api/books       | List books         |
+| GET    | /api/borrow      | List borrow data   |
 
 ---
 
-## 🛠 Project Structure
+## 🧰 Tools Used
 
-```
-src/
-├── controllers/
-├── services/
-├── repositories/
-├── dto/
-├── entity/
-├── config/
-└── exceptions/
-```
-
----
-
-## 📚 SOLID Implementation
-
-- **S** - Single Responsibility: Each layer does one thing (e.g. DTO, Controller, Service)
-- **O** - Open/Closed: Easily extendable (e.g. add features via interfaces)
-- **L** - Liskov: Services follow interface-based abstraction
-- **I** - Interface Segregation: Separate interfaces (IUserService, IBookService)
-- **D** - Dependency Inversion: Components depend on abstraction, not implementation
+- **Spring Boot** - Web framework
+- **JOOQ** - Type-safe SQL and code generation
+- **Liquibase** - DB versioning & migrations
+- **Lombok** - Boilerplate killer
+- **JUnit** - Unit testing
 
 ---
 
@@ -114,4 +108,4 @@ src/
 
 ## 📄 License
 
-MIT © [Your Name or Company]
+MIT © 2025 Exel Tarkus
