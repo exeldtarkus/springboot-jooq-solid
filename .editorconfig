@@ -1,0 +1,42 @@
+# top-most EditorConfig file
+root = true
+
+# Semua file Java
+[*.java]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 120
+
+# Tambahan konvensi khusus Spring Boot
+# Gunakan LF (Line Feed) sebagai newline (Linux/macOS style)
+end_of_line = lf
+
+# Gunakan spasi setelah kata kunci if, for, while, dsb
+space_after_control_statements = true
+
+# File YAML (.yml dan .yaml) untuk konfigurasi Spring
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+
+# File properti (application.properties)
+[*.properties]
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# File Markdown (README, dokumentasi)
+[*.md]
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+# XML (misal: pom.xml)
+[*.xml]
+indent_style = space
+indent_size = 2
+insert_final_newline = true

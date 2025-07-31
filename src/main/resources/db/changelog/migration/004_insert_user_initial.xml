@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="2" author="exel">
+        <sql>
+            INSERT INTO user (active, email, name) VALUES
+            (1, 'user1@example.com', 'User 1'),
+            (1, 'user2@example.com', 'User 2'),
+            (1, 'user3@example.com', 'User 3'),
+            (1, 'user4@example.com', 'User 4'),
+            (1, 'user5@example.com', 'User 5'),
+            (1, 'user6@example.com', 'User 6'),
+            (1, 'user7@example.com', 'User 7'),
+            (1, 'user8@example.com', 'User 8'),
+            (1, 'user9@example.com', 'User 9'),
+            (1, 'user10@example.com', 'User 10'),
+            (1, 'user11@example.com', 'User 11'),
+            (1, 'user12@example.com', 'User 12'),
+            (1, 'user13@example.com', 'User 13'),
+            (1, 'user14@example.com', 'User 14'),
+            (1, 'user15@example.com', 'User 15'),
+            (1, 'user16@example.com', 'User 16'),
+            (1, 'user17@example.com', 'User 17'),
+            (1, 'user18@example.com', 'User 18'),
+            (1, 'user19@example.com', 'User 19'),
+            (1, 'user20@example.com', 'User 20'),
+            (1, 'user21@example.com', 'User 21'),
+            (1, 'user22@example.com', 'User 22'),
+            (1, 'user23@example.com', 'User 23'),
+            (1, 'user24@example.com', 'User 24'),
+            (1, 'user25@example.com', 'User 25'),
+            (1, 'user26@example.com', 'User 26'),
+            (1, 'user27@example.com', 'User 27'),
+            (1, 'user28@example.com', 'User 28'),
+            (1, 'user29@example.com', 'User 29'),
+            (1, 'user30@example.com', 'User 30'),
+            (1, 'user31@example.com', 'User 31'),
+            (1, 'user32@example.com', 'User 32'),
+            (1, 'user33@example.com', 'User 33'),
+            (1, 'user34@example.com', 'User 34'),
+            (1, 'user35@example.com', 'User 35'),
+            (1, 'user36@example.com', 'User 36'),
+            (1, 'user37@example.com', 'User 37'),
+            (1, 'user38@example.com', 'User 38'),
+            (1, 'user39@example.com', 'User 39'),
+            (1, 'user40@example.com', 'User 40'),
+            (1, 'user41@example.com', 'User 41'),
+            (1, 'user42@example.com', 'User 42'),
+            (1, 'user43@example.com', 'User 43'),
+            (1, 'user44@example.com', 'User 44'),
+            (1, 'user45@example.com', 'User 45'),
+            (1, 'user46@example.com', 'User 46'),
+            (1, 'user47@example.com', 'User 47'),
+            (1, 'user48@example.com', 'User 48'),
+            (1, 'user49@example.com', 'User 49'),
+            (1, 'user50@example.com', 'User 50');
+        </sql>
+
+        <rollback>
+            DELETE FROM user WHERE email LIKE 'user%@example.com';
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

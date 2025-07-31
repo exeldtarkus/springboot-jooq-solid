@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="3" author="exel">
+        <sql>
+            CREATE TABLE IF NOT EXISTS borrow (
+                id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                user_id BIGINT NOT NULL,
+                book_id BIGINT NOT NULL,
+                borrow_date DATE NOT NULL,
+                return_date DATE,
+                status VARCHAR(50),
+
+                CONSTRAINT fk_borrow_user FOREIGN KEY (user_id) REFERENCES user(id),
+                CONSTRAINT fk_borrow_book FOREIGN KEY (book_id) REFERENCES book(id)
+            );
+        </sql>
+
+        <rollback>
+            DROP TABLE borrow;
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
