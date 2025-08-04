@@ -73,10 +73,27 @@
 
   <build>
     <plugins>
-      <!-- Spring Boot Plugin -->
+      <!-- Liquibase Maven Plugin for Database Migration -->
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <version>4.26.0</version>
+        <executions>
+          <execution>
+            <id>liquibase-update</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>update</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <changeLogFile>src/main/resources/db/changelog/db.changelog-master.xml</changeLogFile>
+          <url>jdbc:mysql://localhost:3306/mydb</url>
+          <username>user</username>
+          <password>password</password>
+          <driver>com.mysql.cj.jdbc.Driver</driver>
+        </configuration>
       </plugin>
 
       <!-- JOOQ Code Generator -->
@@ -113,6 +130,27 @@
         </executions>
       </plugin>
 
+      <!-- Jooq Build Helper Plugin to add generated sources -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>target/generated-sources/jooq</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <!-- Java Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -122,6 +160,12 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
         </configuration>
+      </plugin>
+
+      <!-- Spring Boot Plugin -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
     </plugins>
 
@@ -140,25 +184,6 @@
       <id>default</id>
       <build>
         <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <version>3.2.0</version>
-            <executions>
-              <execution>
-                <id>add-source</id>
-                <phase>generate-sources</phase>
-                <goals>
-                  <goal>add-source</goal>
-                </goals>
-                <configuration>
-                  <sources>
-                    <source>target/generated-sources/jooq</source>
-                  </sources>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
       </build>
     </profile>
