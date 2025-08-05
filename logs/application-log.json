@@ -163,3 +163,28 @@
 {"level":"INFO","message":"Started SpringjooqApplicationTests in 8.596 seconds (process running for 9.617)","@timestamp":"2025-08-05T10:43:10.8459428+07:00","thread_name":"main","logger_name":"com.jooqspring.springjooq.SpringjooqApplicationTests"}
 {"level":"INFO","message":"HikariPool-1 - Shutdown initiated...","@timestamp":"2025-08-05T10:43:12.6750666+07:00","thread_name":"SpringApplicationShutdownHook","logger_name":"com.zaxxer.hikari.HikariDataSource"}
 {"level":"INFO","message":"HikariPool-1 - Shutdown completed.","@timestamp":"2025-08-05T10:43:12.7170309+07:00","thread_name":"SpringApplicationShutdownHook","logger_name":"com.zaxxer.hikari.HikariDataSource"}
+{"level":"INFO","message":"Starting SpringjooqApplicationTests using Java 17.0.14 with PID 36776 (started by ADMIN in C:\\ExelFile\\Repository-Standford\\springboot-jooq-solid)","@timestamp":"2025-08-05T14:03:12.3811223+07:00","thread_name":"main","logger_name":"com.jooqspring.springjooq.SpringjooqApplicationTests"}
+{"level":"INFO","message":"The following 1 profile is active: \"dev\"","@timestamp":"2025-08-05T14:03:12.4041876+07:00","thread_name":"main","logger_name":"com.jooqspring.springjooq.SpringjooqApplicationTests"}
+{"level":"INFO","message":"HikariPool-1 - Starting...","@timestamp":"2025-08-05T14:03:14.359141+07:00","thread_name":"main","logger_name":"com.zaxxer.hikari.HikariDataSource"}
+{"level":"INFO","message":"HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@892af0e","@timestamp":"2025-08-05T14:03:15.0127492+07:00","thread_name":"main","logger_name":"com.zaxxer.hikari.pool.HikariPool"}
+{"level":"INFO","message":"HikariPool-1 - Start completed.","@timestamp":"2025-08-05T14:03:15.0185712+07:00","thread_name":"main","logger_name":"com.zaxxer.hikari.HikariDataSource"}
+{"level":"INFO","message":"Reading resource: db/changelog/migration/001_init_book.xml","@timestamp":"2025-08-05T14:03:15.7162892+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading resource: db/changelog/migration/002_init_user.xml","@timestamp":"2025-08-05T14:03:16.0081292+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading resource: db/changelog/migration/003_insert_book_initial.xml","@timestamp":"2025-08-05T14:03:16.037879+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading resource: db/changelog/migration/004_insert_user_initial.xml","@timestamp":"2025-08-05T14:03:16.0634713+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading resource: db/changelog/migration/005_init_borrow.xml","@timestamp":"2025-08-05T14:03:16.0857097+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading resource: db/changelog/migration/007_insert_borrow.xml","@timestamp":"2025-08-05T14:03:16.1218931+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading from mydb.DATABASECHANGELOG","@timestamp":"2025-08-05T14:03:16.462338+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"Reading from mydb.DATABASECHANGELOG","@timestamp":"2025-08-05T14:03:16.5325764+07:00","thread_name":"main","logger_name":"liquibase.changelog"}
+{"level":"INFO","message":"UPDATE SUMMARY","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"Run:                          0","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"Previously run:               6","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"Filtered out:                 0","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"-------------------------------","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"Total change sets:            6","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"Update summary generated","@timestamp":"2025-08-05T14:03:16.5468921+07:00","thread_name":"main","logger_name":"liquibase.util"}
+{"level":"INFO","message":"Successfully released change log lock","@timestamp":"2025-08-05T14:03:16.5803835+07:00","thread_name":"main","logger_name":"liquibase.lockservice"}
+{"level":"INFO","message":"Command execution complete","@timestamp":"2025-08-05T14:03:16.5836122+07:00","thread_name":"main","logger_name":"liquibase.command"}
+{"level":"INFO","message":"Started SpringjooqApplicationTests in 7.027 seconds (process running for 8.221)","@timestamp":"2025-08-05T14:03:18.4937166+07:00","thread_name":"main","logger_name":"com.jooqspring.springjooq.SpringjooqApplicationTests"}
+{"level":"INFO","message":"HikariPool-1 - Shutdown initiated...","@timestamp":"2025-08-05T14:03:20.3748865+07:00","thread_name":"SpringApplicationShutdownHook","logger_name":"com.zaxxer.hikari.HikariDataSource"}
+{"level":"INFO","message":"HikariPool-1 - Shutdown completed.","@timestamp":"2025-08-05T14:03:20.4302937+07:00","thread_name":"SpringApplicationShutdownHook","logger_name":"com.zaxxer.hikari.HikariDataSource"}

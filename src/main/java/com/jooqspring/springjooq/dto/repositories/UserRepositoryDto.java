@@ -11,13 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 public class UserRepositoryDto {
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @EqualsAndHashCode(callSuper = false)
-    public static class UserResponseSearch extends User {
-        private String emailAlias;
-    }
 
     @Data
     @NoArgsConstructor
@@ -47,23 +40,21 @@ public class UserRepositoryDto {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    @Builder
     @EqualsAndHashCode(callSuper = false)
-    public static class QueryDataUpdate {
-        private String name;
-        private String email;
-        private Boolean active;
+    public static class UserResponseSearch extends User {
+        private String email_alias;
     }
+
+    @Data
+    @EqualsAndHashCode(callSuper = false)
+    public static class QueryDataUpdate extends User {}
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    @Builder
     @EqualsAndHashCode(callSuper = false)
-    public static class QueryDataInsert {
-        private String name;
-        private String email;
-        private Boolean active;
+    public static class QueryDataInsert extends User {
+        private transient Long id; // Exclude the 'id' field from serialization
     }
 
 }

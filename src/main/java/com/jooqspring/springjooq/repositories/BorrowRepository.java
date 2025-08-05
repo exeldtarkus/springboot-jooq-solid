@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static com.jooqspring.springjooq.jooq.generated.tables.Borrow.BORROW;
 import static com.jooqspring.springjooq.jooq.generated.tables.Book.BOOK;

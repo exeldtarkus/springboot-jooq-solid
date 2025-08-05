@@ -11,13 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 public class BorrowRepositoryDto {
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @EqualsAndHashCode(callSuper = false)
-    public static class UserResponseSearch extends Borrow {
-        private String user_id_alias;
-    }
 
     @Data
     @NoArgsConstructor
@@ -47,29 +40,23 @@ public class BorrowRepositoryDto {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
+    @EqualsAndHashCode(callSuper = false)
+    public static class UserResponseSearch extends Borrow {
+        private String user_id_alias;
+    }
+
+    @Data
     @Builder
     @EqualsAndHashCode(callSuper = false)
-    public static class QueryDataUpdate {
-        Long id;
-        Long user_id;
-        Integer book_id;
-        String borrow_date;
-        String return_date;
-        String status;
-    }
+    public static class QueryDataUpdate extends Borrow {}
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
     @EqualsAndHashCode(callSuper = false)
-    public static class QueryDataInsert {
-        Integer id;
-        Long user_id;
-        Integer book_id;
-        String borrow_date;
-        String return_date;
-        String status;
+    public static class QueryDataInsert extends Borrow {
+        private transient Long id; // Exclude the 'id' field from serialization
     }
 
 }
