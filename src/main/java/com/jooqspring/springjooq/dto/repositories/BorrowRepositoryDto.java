@@ -1,7 +1,7 @@
 package com.jooqspring.springjooq.dto.repositories;
 
 import com.jooqspring.springjooq.dto.QueryParamPaginationDto;
-import com.jooqspring.springjooq.entity.User;
+import com.jooqspring.springjooq.entity.Borrow;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,27 +10,25 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
-public class UserRepositoryDto {
+public class BorrowRepositoryDto {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
     @EqualsAndHashCode(callSuper = false)
-    public static class UserResponseSearch extends User {
-        private String emailAlias;
+    public static class UserResponseSearch extends Borrow {
+        private String user_id_alias;
     }
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    @Builder
     @Accessors(chain = true)
     @EqualsAndHashCode(callSuper = false)
-    public static class QueryParamSearch extends QueryParamPaginationDto {
-        private Long id;
-        private String name;
-        private String email;
-        private Boolean active;
-
+    public static class QueryParamSearch extends Borrow {
+        Integer limit = 10;
+        Integer offset = 0;
+        Boolean joinUser;
+        Boolean joinBook;
     }
 
     @Data
@@ -39,9 +37,11 @@ public class UserRepositoryDto {
     @Builder
     @EqualsAndHashCode(callSuper = false)
     public static class QueryParamUpdate {
-        private String name;
-        private String email;
-        private Boolean active;
+        Long userId;
+        Integer bookId;
+        String borrowDate;
+        String returnDate;
+        String status;
     }
 
     @Data
@@ -50,9 +50,12 @@ public class UserRepositoryDto {
     @Builder
     @EqualsAndHashCode(callSuper = false)
     public static class QueryDataUpdate {
-        private String name;
-        private String email;
-        private Boolean active;
+        Long id;
+        Long user_id;
+        Integer book_id;
+        String borrow_date;
+        String return_date;
+        String status;
     }
 
     @Data
@@ -61,9 +64,12 @@ public class UserRepositoryDto {
     @Builder
     @EqualsAndHashCode(callSuper = false)
     public static class QueryDataInsert {
-        private String name;
-        private String email;
-        private Boolean active;
+        Integer id;
+        Long user_id;
+        Integer book_id;
+        String borrow_date;
+        String return_date;
+        String status;
     }
 
 }

@@ -23,7 +23,7 @@ public class UserRepository {
      * Method pencarian umum dengan kondisi dinamis
      */
     private List<UserRepositoryDto.UserResponseSearch> index(UserRepositoryDto.QueryParamSearch param) {
-        var query = dsl.selectFrom(USER);
+        var query = dsl.select(USER).from(USER);
         Condition condition = DSL.noCondition();
 
         if (param.getName() != null) {

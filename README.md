@@ -42,18 +42,30 @@ src/
 
 ## 📦 Tech Stack
 
-| Layer             | Library                  |
-|------------------|--------------------------|
-| Core Framework    | Spring Boot              |
-| Database Access   | JOOQ (code-generated)     |
-| Database          | MySQL / PostgreSQL       |
-| Migrations        | Liquibase                |
-| API Style         | REST (JSON)              |
+| Layer             | Library                             |
+|------------------ |-------------------------------------|
+| Core Framework    | Spring Boot                         |
+| Database Access   | JOOQ (code-generated)               |
+| Database          | MySQL / PostgreSQL                  |
+| Migrations        | Liquibase                           |
+| API Style         | REST (JSON)                         |
 | Architecture      | SOLID (Single Responsibility, etc.) |
 
 ---
 
 ## 🚀 Getting Started
+
+> ⚠️ **Important:** Before running the application, make sure to:
+> 1. Run Liquibase migration:  
+>    ```bash
+>    mvn liquibase:update -Pdefault
+>    ```
+> 2. Generate JOOQ code:  
+>    ```bash
+>    mvn generate-sources
+>    ```
+> 3. Then you can run the Spring Boot application.
+
 
 ### Prerequisites
 
@@ -99,10 +111,8 @@ mvn generate-sources
 
 ## ✅ To Do
 
-- [ ] Add Swagger UI
 - [ ] Add JWT authentication
 - [ ] Add unit tests (JUnit 5 + Mockito)
-- [ ] Dockerize the app
 
 ---
 

@@ -8,10 +8,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class User {
-    private Long id;
-    private Boolean active;
-    private String email;
-    private String name;
+public class Borrow {
+    Long id;
+    Long user_id;
+    Long book_id;
+    String borrow_date;
+    String return_date;
+    String status;
 }

@@ -32,7 +32,7 @@ public class UserService implements IUserService {
     public int createUser(UserRepositoryDto.QueryDataInsert userDto) {
 
         UserRepositoryDto.QueryDataInsert insertData = new UserRepositoryDto.QueryDataInsert();
-        insertData.setActive(userDto.getActive());
+        insertData.setActive(true);
         insertData.setName(userDto.getName());
         insertData.setEmail(userDto.getEmail());
 
