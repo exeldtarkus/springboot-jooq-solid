@@ -69,6 +69,22 @@
       <groupId>org.liquibase</groupId>
       <artifactId>liquibase-core</artifactId>
     </dependency>
+
+    <!-- Logback for Logging -->
+    <dependency>
+      <groupId>net.logstash.logback</groupId>
+      <artifactId>logstash-logback-encoder</artifactId>
+      <version>7.4</version> <!-- gunakan versi stabil terbaru -->
+    </dependency>
+
+    <!-- Springdoc OpenAPI for API Documentation swagger -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.5.0</version> <!-- Versi terbaru saat ini -->
+    </dependency>
+
+    
   </dependencies>
 
   <build>
@@ -178,10 +194,20 @@
     <sourceDirectory>src/main/java</sourceDirectory>
   </build>
 
-  <!-- Tambahan agar class hasil codegen ikut dikenali -->
+  <!-- list profiles -->
   <profiles>
+    <!-- dev configuration profile -->
     <profile>
-      <id>default</id>
+      <id>dev</id>
+      <build>
+        <plugins>
+        </plugins>
+      </build>
+    </profile>
+
+    <!-- prod configuration profile -->
+    <profile>
+      <id>prod</id>
       <build>
         <plugins>
         </plugins>
